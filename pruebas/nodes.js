@@ -1,4 +1,4 @@
-import Node from '../src/Nodo.js'
+import Node from '../src/Node.js'
 
 const attention1 = new Node({
     date: "02/02",

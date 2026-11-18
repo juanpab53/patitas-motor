@@ -28,6 +28,61 @@ Initial states of the nodes:
 
 ### Minireto 2
 
+#### Empty List
+
+In this case it doesn't matter the method, beacuse the list is empty, any node that is created at here is the head `Add at the beginning` and are equals in this case `Add at the end`
+
+    Head
+    ↓
+    [New Node] -> NULL
+
+#### List with a node
+
+In this case the `Add at the beginning` create a node, connect the new node with the `Head` and move the `Head` to the new node. The old node points out to null.
+
+`Add at the end` connect the actual node with the new one, an this new points out to null.
+
+Initial state
+    ```Head -> NULL```
+
+Add in any case
+
+```text
+    Head
+    ↓
+    [New Node] → NULL
+```
+
+#### List with multiple nodes
+
+`Add at the beginning` create a node, connect the new node with the `Head` move the `Head` to the new one.
+
+`Add at the end` if there's a pointer called `Queue` the node that have this pointer point out at the new one and `Queue` moves to the new node.
+
+Initial State
+
+```text
+        Head                              Queue
+        ↓                                  ↓
+        [Node 1] → [Node 2] → [Node 3] → NULL
+```
+
+Add at the beginning
+
+```text
+        Head
+        ↓
+        [New Node] → [Node 1] → [Node 2] → [Node 3] → NULL
+```
+
+Add at the end
+
+```
+    Head                                      Queue
+        ↓                                          ↓
+        [Node 1] → [Node 2] → [Node 3] → [New Node] → NULL
+```
+
 ### Minireto 3
 
 ### Minireto 4
