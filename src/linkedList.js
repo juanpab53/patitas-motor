@@ -34,15 +34,22 @@ class linkedList {
         this.size++
     }
 
-    search(data) {
+    search(condition) {
+        const byPredicate = typeof condition === "function";
+        let found = null;
         let current = this.head;
+        
         while (current !== null) {
-            if (current.data === data) {
-                return current;
+            const matches = byPredicate ? condition(current.data) : current.data === condition;
+            if (matches) {
+                found = current;
+                if(!byPredicate) {
+                    return found;
+                }
             }
             current = current.next;
         }
-        return null;
+        return found;
     }
 
     insertAfter(condition, data) {

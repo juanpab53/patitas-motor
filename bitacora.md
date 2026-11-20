@@ -65,8 +65,8 @@ Initial State
 
 Add at the beginning
 
-        Head
-        ↓
+        Head                               Queue
+        ↓                                   ↓
         [New Node] → [Node 1] → [Node 2] → [Node 3] → NULL
 
 Add at the end
@@ -90,14 +90,27 @@ linkedList.js methods:
 `isEmpty`: O(1)  
 `getSize`: O(1)  
 
+---
+
 list.js methods:
 
 `buildList`: O(n)  
 `snapshot`: O(n)  
 `runcase`: O(n)
 
+---
+
 #### Why removing the tail in a singly linked list requires transversing it?
 
 Because in a singly linked list `queue` is in the last node and for delete `queue` is necesary the previous node.
 
 ### Minireto 4
+
+| Operation | Singly Linked List (with tail pointer) | Array |
+| --- | --- | --- |
+| Add at the end | O(1) — `addEnd` appends through `queue` | Amortized O(1) — `push` (O(n) when it resizes) |
+| Add at the beginning | O(1) — `addBegining` only relinks `head` | O(n) — `unshift` shifts all elements |
+| Access attention number k | O(n) — traverse from `head` | O(1) — direct indexing `array[k]` |
+| Search | O(n) — `search` walks the nodes | O(n) — linear scan with `find`/`indexOf` |
+| Delete the first element | O(1) — move `head` to the next node | O(n) — `shift` shifts all elements |
+| Delete the first match | O(n) — locate the node, then relink | O(n) — locate the index, then `splice` |
