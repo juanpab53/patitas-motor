@@ -8,7 +8,7 @@ class linkedList {
     }
 
     addEnd(data) {
-        if (this.isEmpty) {
+        if (this.isEmpty()) {
             const newnode = new Node(data)
             this.head = newnode
             this.queue = newnode
@@ -16,13 +16,13 @@ class linkedList {
             const newnode = new Node(data);
             this.queue.next = newnode;
             this.queue = newnode;
-            this.queue.next = null;
+            newnode.next = null;
         }
         this.size++;
     }
 
     addBegining(data) {
-        if (this.isEmpty) {
+        if (this.isEmpty()) {
             const newnode = new Node(data)
             this.head = newnode
             this.queue = newnode
@@ -51,7 +51,7 @@ class linkedList {
     }
 
     isEmpty() {
-        return this.head === 0;
+        return this.head === null;
     }
 
     getSize() {
