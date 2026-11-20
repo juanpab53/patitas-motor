@@ -34,6 +34,61 @@ class linkedList {
         this.size++
     }
 
+    search(data) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.data === data) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    insertAfter(condition, data) {
+        const existingNode = this.search(condition);
+        if(existingNode === null) {
+            throw new Error("Node not found");
+        }
+
+        const newNode = new Node(data);
+        newNode.next = existingNode.next;
+        existingNode.next = newNode;
+
+        if (existingNode === this.queue) {
+            this.queue = newNode;
+        }
+
+        this.size++;
+    }
+
+    delete(condition) {
+        let current = this.head;
+        let previous = null;
+
+        while(current !== null && current.data !== condition) {
+            previous = current;
+            current = current.next;
+        }
+
+        if (current === null) {
+            throw new Error("Node not found");
+        }
+
+        if (previous === null) {
+            this.head = current.next;
+        } else{
+            previous.next = current.next;
+        }
+
+        if(current === this.queue) {
+            this.queue = previous;
+        }
+
+        current.next = null;
+        this.size--;
+    }
+
     iterate(callback) {
         let actual = this.head;
         let index = 0;

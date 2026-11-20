@@ -43,15 +43,13 @@ In this case the `Add at the beginning` create a node, connect the new node with
 `Add at the end` connect the actual node with the new one, an this new points out to null.
 
 Initial state
-    ```Head -> NULL```
+    `Head -> NULL`
 
 Add in any case
 
-```text
     Head
     ↓
     [New Node] → NULL
-```
 
 #### List with multiple nodes
 
@@ -61,28 +59,45 @@ Add in any case
 
 Initial State
 
-```text
         Head                              Queue
         ↓                                  ↓
         [Node 1] → [Node 2] → [Node 3] → NULL
-```
 
 Add at the beginning
 
-```text
         Head
         ↓
         [New Node] → [Node 1] → [Node 2] → [Node 3] → NULL
-```
 
 Add at the end
 
-```
     Head                                      Queue
         ↓                                          ↓
         [Node 1] → [Node 2] → [Node 3] → [New Node] → NULL
-```
 
 ### Minireto 3
+
+linkedList.js methods:
+
+`Constructor`: O(1)  
+`addEnd`: O(1)  
+`addBegining`: O(1)  
+`search`: O(n)  
+`insertAfter`: O(n)  
+`delete`: O(n)  
+`iterate`: O(n)  
+`toArray`: O(n)  
+`isEmpty`: O(1)  
+`getSize`: O(1)  
+
+list.js methods:
+
+`buildList`: O(n)  
+`snapshot`: O(n)  
+`runcase`: O(n)
+
+#### Why removing the tail in a singly linked list requires transversing it?
+
+Because in a singly linked list `queue` is in the last node and for delete `queue` is necesary the previous node.
 
 ### Minireto 4

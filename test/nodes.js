@@ -1,4 +1,4 @@
-import Node from '../src/Node.js'
+const Node = require("../src/Node");
 
 const attention1 = new Node({
     date: "02/02",
@@ -19,6 +19,20 @@ const attention3 = new Node({
     reason: "Limpieza dental",
     veterinarian: "Dra. Ríos",
     cost: 150000,
+})
+
+const attention4 = new Node({
+    date: "10/06",
+    reason: "Consulta general",
+    veterinarian: "Dr. Gómez",
+    cost: 55000,
+})
+
+const missingAttention = new Node({
+    date: "01/01",
+    reason: "Atención inexistente",
+    veterinarian: "Dra. Ríos",
+    cost: 0,
 })
 
 const head = attention1
@@ -47,3 +61,11 @@ function calculateCost(current){
 }
 
 calculateCost(head)
+
+module.exports = {
+    attention1,
+    attention2,
+    attention3,
+    attention4,
+    missingAttention,
+}
